@@ -1,0 +1,109 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    
+    <div>
+        <h1>CRS/SDGs トピックス</h1>
+    </div>
+
+    
+        <div class="modal">
+            
+        </div>
+
+
+    <div class="l-csr">
+
+        <div class="p-csr-list">
+            
+            <section>
+                <img alt="" src="/assets/images/top/.jpg">
+                <div class="p-csr-txtBox">
+                    <p class="tag">CRS</p>
+                    <h3>サンプルテキストサンプルテキストサンプルテキストサンプルテキスト</h3>
+                    <p class="p-csr-txt">サンプルテキストサンプルテキストサンプルテキストサンプルテキストサンプルテキストサンプルテキストサンプルテキストサンプルテキストサンプルテキストサンプルテキストサンプルテキストサンプルテキスト</p>
+                    <button class="p-modalBtn" value="date01">続きを読む</button>
+                </div>
+            </section>
+            
+            <section>
+                <img alt="" src="/assets/images/top/.jpg">
+                <div class="p-csr-txtBox">
+                    <p class="tag">CRS</p>
+                    <h3>サンプルテキストサンプルテキストサンプルテキストサンプルテキスト</h3>
+                    <p class="p-csr-txt">サンプルテキストサンプルテキストサンプルテキストサンプルテキストサンプルテキストサンプルテキストサンプルテキストサンプルテキストサンプルテキストサンプルテキストサンプルテキストサンプルテキスト</p>
+                    <button class="p-modalBtn" value="date02">続きを読む</button>
+                </div>
+            </section>
+            
+            <section>
+                <img alt="" src="/assets/images/top/.jpg">
+                <div class="p-csr-txtBox">
+                    <p class="tag">CRS</p>
+                    <h3>サンプルテキストサンプルテキストサンプルテキストサンプルテキスト</h3>
+                    <p class="p-csr-txt">サンプルテキストサンプルテキストサンプルテキストサンプルテキストサンプルテキストサンプルテキストサンプルテキストサンプルテキストサンプルテキストサンプルテキストサンプルテキストサンプルテキスト</p>
+                    <button class="p-modalBtn" value="date03">続きを読む</button>
+                </div>
+            </section>
+
+            <section class="p-modalDateBox" id="date01">
+                <p>date01</p>
+            </section>
+
+            <section class="p-modalDateBox" id="date02">
+                <p>date02</p>
+            </section>
+
+            <section class="p-modalDateBox" id="date03">
+                <p>date03</p>
+            </section>
+
+    </div><!-- p-csr-list -->
+
+    </div><!-- l-csr -->
+    
+
+    <script src="https://cdn.jsdelivr.net/npm/axios/dist/axios.min.js"></script>
+    <script>
+    
+        //外部ファイル読み込み
+        axios.get("modal.txt").then(response => {
+            const body = document.querySelector('.modal');        
+            body.innerHTML = response.data
+        })
+    
+    
+    
+        //モーダルウィンドウ
+        //const modalBtn = document.querySelectorAll(".p-modalBtn");
+
+        document.body.addEventListener('click', function (event) {
+            if(event.target.className == "p-modalBtn"){
+                const v = event.target.value;
+                const modelId = document.querySelector("#" + v)
+                console.log(modelId);
+                modelId.classList.toggle("on")
+            }
+        }, false)
+    
+    </script>
+    
+
+    <style>
+        .p-modalDateBox{
+            display: none;
+        }
+        .p-modalDateBox.on{
+            display: block;
+        }
+
+    </style>
+    
+</body>
+</html>
+

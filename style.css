@@ -1,0 +1,37 @@
+h1 {
+  position: absolute;
+}
+
+div {
+  overflow: hidden;
+}
+
+p {
+  -webkit-animation: 0.2s txtAnimation infinite;
+          animation: 0.2s txtAnimation infinite;
+  padding: 0;
+  margin: 0;
+}
+
+@-webkit-keyframes txtAnimation {
+  0% {
+    -webkit-transform: translateY(50%);
+            transform: translateY(50%);
+  }
+  100% {
+    -webkit-transform: translateY(0%);
+            transform: translateY(0%);
+  }
+}
+
+@keyframes txtAnimation {
+  0% {
+    -webkit-transform: translateY(50%);
+            transform: translateY(50%);
+  }
+  100% {
+    -webkit-transform: translateY(0%);
+            transform: translateY(0%);
+  }
+}
+/*# sourceMappingURL=style.css.map */

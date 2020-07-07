@@ -1,0 +1,26 @@
+h1{
+    position: absolute;
+}
+
+div{
+    overflow: hidden;
+
+}
+
+p{
+    animation: 0.2s txtAnimation infinite;
+    padding: 0;
+    margin: 0;
+
+}
+
+@keyframes txtAnimation{
+    0%{
+        transform: translateY(50%);
+    }
+    100%{
+        transform: translateY(0%);
+    }
+}
+
+

@@ -1,0 +1,102 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head><body>
+    <div class="open">
+      詳細をみる
+    </div>
+    <div class="mask hidden"></div>
+    <section class="modal hidden">
+      <p>He said that that that that that boy used in the sentence was wrong.<br>あの少年がその文で使ったあのthatは間違っていたと彼は言った。</p>
+      <div class="close">
+        閉じる
+      </div>
+    </section>
+  </body>
+</html>
+
+
+
+<script>
+
+    const open = document.querySelector('.open');
+    const close = document.querySelector('.close');
+    const modal = document.querySelector('.modal');
+    const mask = document.querySelector('.mask');
+
+    open.addEventListener('click', function () {
+    modal.classList.remove('hidden');
+    mask.classList.remove('hidden');
+    });
+    close.addEventListener('click', function () {
+    modal.classList.add('hidden');
+    mask.classList.add('hidden');
+    });
+    mask.addEventListener('click', function () {
+    modal.classList.add('hidden');
+    mask.classList.add('hidden');
+    });
+    
+</script>
+
+
+<style>
+
+body {
+  font-size: 16px;
+}
+
+.open,
+.close {
+  cursor: pointer;
+  width: 200px;
+  border: 1px solid #ccc;
+  border-radius: 4px;
+  text-align: center;
+  padding: 12px;
+  margin: 16px auto 0;
+  background: #4caf50;
+  color: white;
+}
+
+.mask {
+  background: rgba(0, 0, 0, 0.4);
+  position: fixed;
+  top: 0;
+  bottom: 0;
+  right: 0;
+  left: 0;
+  z-index: 1;
+}
+
+.modal {
+  background: #fff;
+  color: #555;
+  width: 300px;
+  padding: 40px;
+  border-radius: 4px;
+  position: absolute;
+  top: 40px;
+  left: 0;
+  right: 0;
+  margin: 0 auto;
+  z-index: 2;
+  transition: 0.4s;
+}
+
+.modal p {
+  margin: 0 0 20px;
+}
+
+.mask.hidden {
+  display: none;
+}
+
+.modal.hidden {
+  transform: translate(0, -500px);
+}
+
+</style>
